@@ -20,6 +20,7 @@ Batas
 
     ini adalah kode zodiak lengkap
     
+<?php
 date_default_timezone_set("Asia/Jakarta");
 ?>
 <html>
@@ -220,8 +221,8 @@ $mysign = "Capricorn";
         echo("<tr align = 'right'><td class='top gradien1'><span>Zodiak Kamu: </span></td>");
         echo("<td align='center'></br><img width=128 src='".$mysign.".png'></br>");
         echo($mysign."</br></br>");
-
+        $linkfbshare = "http://www.facebook.com/sharer.php?s=100&p[title]=Zodiaku&p[summary]=Nama: ".$namanya." | Tanggal Lahir: ".$tgllhr." | Usia: ".$usia." | Zodiak: ".$mysign."&p[url]=http://bascomp.juplo.com/zodiac&p[images][0]=http://bascomp.juplo.com/zodiac/".$mysign.".png";
+        echo("<a target='_blank' href='".$linkfbshare."'><img src='facebook_share.png' alt='Bagikan info zodiakmu ke facebook ^_^'></a></br></br>^_^</td></tr>");
         }
-    }
+}
 ?>
-
