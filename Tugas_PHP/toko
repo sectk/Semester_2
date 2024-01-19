@@ -1,0 +1,47 @@
+<?php
+
+    // code koneksi php ke mysql
+    $host = "127.0.0.1";
+    $user = "root";
+    $password = ""; 
+    $db = "dbtoko";
+
+    $koneksi =new mysqli($host, $user, $password, $db);
+
+    echo "<table border=2px>
+    <thead>
+    <tr>
+
+        <th>
+        PELANGGAN
+        </th>
+
+        <th>
+        HARGA
+        </th>
+
+        <th>
+        STOK
+        </th>
+
+    </thead>
+    <tbody>";
+
+    
+    $sql = "SELECT*FROM barang";
+    
+    $hasil = mysqli_query($koneksi, $sql);
+
+    var_dump($hasil);
+
+    while($row=mysqli_fetch_array($hasil)){
+            echo "<td>" .$row[1]."</td>";
+            echo "<td>" .$row[2]."</td>";
+            echo "<td>" .$row[3]."</td>";
+
+
+            echo "</tr>";
+
+
+    }
+?>
