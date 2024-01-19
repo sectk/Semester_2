@@ -41,7 +41,50 @@
 
 
             echo "</tr>";
-
-
     }
+
+    $koneksi =new mysqli($host, $user, $password, $db);
+
+    echo "<table border=2px>
+    <thead>
+    <tr>
+
+        <th>
+         ID
+        </th>
+
+        <th>
+       NAMA PELANGGAN
+        </th>
+
+        <th>
+       ALAMAT
+        </th>
+
+        <th>
+        TELEPON
+        </th>
+
+    </thead>
+    <tbody>";
+
+
+
+    $sql = "SELECT*FROM pelanggan";
+    
+    $hasil = mysqli_query($koneksi, $sql);
+
+    var_dump($hasil);
+
+    while($row=mysqli_fetch_array($hasil)){
+            echo "<td>" .$row[0]."</td>";
+            echo "<td>" .$row[1]."</td>";
+            echo "<td>" .$row[2]."</td>";
+            echo "<td>" .$row[3]."</td>";
+           
+
+
+            echo "</tr>";
+    }
+
 ?>
