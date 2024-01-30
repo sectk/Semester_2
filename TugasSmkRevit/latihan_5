@@ -1,0 +1,57 @@
+<?php
+
+
+    //TANGGAL IF
+
+    $tanggal = 7;
+
+    // $hasil = $tanggal < 32;
+
+    if($tanggal < 32){
+        if($tanggal > 0){
+            echo 'Benar';
+        }else {
+            echo 'salah';
+        }
+    } else {
+
+        echo 'Salah';
+    }
+
+
+    //NILAI IF
+
+    $nilai = 4;
+
+    // if($nilai){
+    //     if($nilai >= 100){
+    //         echo 'Nilai Benar';
+    //     }else {
+    //         echo 'nilai salah';
+    //     }
+    // }else {
+    //     echo 'Nilai Salah';
+    // }
+
+        // if(nilai >= 0 && $nilai <= 100){
+        //     echo 'Nilai Benar';
+        // }else {
+        //     echo 'Nilai Salah';
+        // }
+
+        // if ($nilai >= 100 || $nilai <= 0){
+        //     echo 'Nilai Bener';
+        // }else {
+        //     echo 'Nilai Salah';
+        // }
+
+
+
+
+
+
+
+
+
+
+?>
