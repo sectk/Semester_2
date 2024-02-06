@@ -1,0 +1,13 @@
+<?php  
+    session_start();
+
+    echo $_SESSION['user'] = 'joni';
+
+    echo $_SESSION['alamat'] = 'sidoarjo';
+
+    echo $_SESSION['nama'] = 'joni rambo';
+    
+    var_dump($_SESSION);
+
+
+ ?>
