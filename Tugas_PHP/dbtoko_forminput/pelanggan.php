@@ -12,8 +12,8 @@
     $alamat="";
     $telepon=0;
 
-     //fitur ubah
-     if(isset($_GET["ubah"])){
+      //fitur ubah
+      if(isset($_GET["ubah"])){
         $id=$_GET["ubah"];
         $sql="SELECT * FROM namapelanggan WHERE id=".$id ;
         $hasil=mysqli_query($koneksi, $sql);
@@ -26,6 +26,8 @@
             $telepon=$row[3];
         }
     }
+
+   
 ?>
     
     <form action="" method="post">
@@ -61,7 +63,7 @@
     }
 
 
-    //fitur menghapus
+    //fitur hapus
     if(isset($_GET["hapus"])){
         $id = $_GET["hapus"];
         $sql = "DELETE FROM namapelanggan WHERE id= ". $id;
@@ -69,6 +71,7 @@
 
     }
 
+    
 
 
     $sql = "SELECT*FROM namapelanggan";
