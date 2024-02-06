@@ -8,22 +8,23 @@
     $koneksi =new mysqli($host, $user, $password, $db);
 
     $id = 0;
-    $pelanggan ="";
-    $alamat="";
+    $namabarang ="";
+    $harga=0;
     $telepon=0;
 
+    
       //fitur ubah
       if(isset($_GET["ubah"])){
         $id=$_GET["ubah"];
-        $sql="SELECT * FROM namapelanggan WHERE id=".$id ;
+        $sql="SELECT *FROM barang WHERE id =" .$id;
         $hasil=mysqli_query($koneksi, $sql);
 
         if(mysqli_num_rows($hasil)>0){
             $row=mysqli_fetch_array($hasil);
             $id=$row[0];
-            $pelanggan=$row[1];
-            $alamat=$row[2];
-            $telepon=$row[3];
+            $namabarang=$row[1];
+            $harga=$row[2];
+            $stok=$row[3];
         }
     }
 
@@ -31,12 +32,12 @@
 ?>
     
     <form action="" method="post">
-    nama :
-    <input type="text" name="pelanggan" placeholder="namapelanggan" value="<?php echo $pelanggan?>">
-    alamat :
-    <input type="text" name ="alamat" placeholder="alamat" value="<?php echo $alamat?>">
-    telepon :
-    <input type="number" name="telepon" placeholder="telepon" value="<?php echo $telepon?>">
+   barang:
+    <input type="text" name="namabarang" placeholder="barang" value="<?php echo $namabarang?>">
+   harga:
+    <input type="number" name ="harga" placeholder="harga" value="<?php echo $harga?>">
+   stok:
+    <input type="number" name="stok" placeholder="stok" value="<?php echo $stok?>">
 
     <input type="submit" name="simpan" value="simpan">
     <input type="hidden" name="id" value="<?php echo $id ?>">
@@ -45,18 +46,18 @@
 <?php
      
     //fitur menambah barang
-    $pelanggan=$_POST["pelanggan"] ?? null;
-    $alamat=$_POST["alamat"] ?? null ;
-    $telepon=$_POST["telepon"] ?? null  ;
+    $namabarang=$_POST["namabarang"] ?? null;
+    $harga=$_POST["harga"] ?? null ;
+    $stok=$_POST["stok"] ?? null  ;
 
     if(isset($_POST["id"])){
         $id=$_POST["id"];
         if($id==0){
-            $sql="INSERT INTO namapelanggan(pelanggan, alamat, telepon) VALUES('$pelanggan','$alamat',$telepon)";
+            $sql="INSERT INTO barang(namabarang, harga, stok) VALUES('$namabarang',$harga,$stok)";
             $hasil=mysqli_query($koneksi,$sql);
         } 
         else{
-            $sql="UPDATE namapelanggan SET pelanggan='$pelanggan',alamat='$alamat',telepon=$telepon WHERE id= ".$id;
+            $sql="UPDATE barang SET namabarang='$namabarang',harga='$harga',stok=$stok WHERE id= ".$id;
             $hasil=mysqli_query($koneksi, $sql);
             header("location:http://localhost/toko");
         }
@@ -66,15 +67,14 @@
     //fitur hapus
     if(isset($_GET["hapus"])){
         $id = $_GET["hapus"];
-        $sql = "DELETE FROM namapelanggan WHERE id= ". $id;
+        $sql = "DELETE FROM barang WHERE id= ". $id;
         $hasil = mysqli_query($koneksi, $sql);
 
     }
 
-    
 
 
-    $sql = "SELECT*FROM namapelanggan";
+    $sql = "SELECT*FROM barang";
     $hasil = mysqli_query($koneksi,$sql);
     
     echo "<table border=2px>
