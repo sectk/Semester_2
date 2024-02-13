@@ -1,0 +1,21 @@
+localhost/phpmyadmin/
+
+DATABASERESTORAN
+
+membuat tabel
+
+tabelkategori
+tabelmenu
+tabelorder
+tabelorderdetail
+tabelpelanggan
+
+
+ubah
+salim
+hapus
+tambahkan
+
+varchar
+int
+float
