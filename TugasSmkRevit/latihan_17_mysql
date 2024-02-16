@@ -1,5 +1,28 @@
 localhost/phpmyadmin/
 
+function.php
+<?php
+
+    $host = "127.0.0.1";
+    $user = "root";
+    $password = "";
+    $database = "dbrestoran";
+
+    $koneksi = mysqli_connet($host, $user, $password, $database);
+
+    
+?>
+
+select.php
+<?php 
+
+    require_once "../funcion.php";
+
+    $sql = "SELECT*FROM  tabelkategori";
+
+?>
+
+
 DATABASERESTORAN
 
 membuat tabel
