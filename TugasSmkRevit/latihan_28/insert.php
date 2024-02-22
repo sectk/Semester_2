@@ -7,11 +7,8 @@
 
     </div>
     <div>
-        <input type="submit" name="simpan" value="simpan">
+        <input type="submit" name="simpan" value="simpan" class="btn btn-primary">
     </div>
-
-
-
 
 </div>
 
