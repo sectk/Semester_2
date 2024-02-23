@@ -3,7 +3,7 @@
 if(isset($_GET['id'])){
     $id=$_GET['id'];
 
-    $sql = "DELETE FROM tabelkategori WHERE idkkategori = $id";
+    $sql = "DELETE FROM tabelmenu WHERE idmenu = $id";
 
     $db->runSQL($sql);
 
